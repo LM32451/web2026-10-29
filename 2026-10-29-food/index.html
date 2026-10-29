@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牛肉麵美食推薦</title>
+    <style>
+        /* 整頁背景：淡暖色漸層，帶出美食氛圍 */
+        body {
+            margin: 0;
+            padding: 40px 0;
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: linear-gradient(160deg, #fff8f0 0%, #ffe6cc 100%);
+            color: #4e342e;
+        }
+
+        /* 頁首區塊：標題與副標題 */
+        .header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #d84315;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            font-size: 15px;
+            color: #8d6e63;
+        }
+
+        /* 表格：置中、寬度 80%，列與列之間留空白 */
+        .food-table {
+            width: 80%;
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 0 22px;
+        }
+
+        /* 每一列是一張卡片：白底、大圓角、柔和陰影 */
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 24px rgba(216, 67, 21, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 滑鼠移上去時卡片微微浮起 */
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(216, 67, 21, 0.2);
+        }
+
+        /* 每一格的共同樣式 */
+        .cell {
+            border: none;
+            vertical-align: middle;
+            height: 30vh;
+            padding: 0;
+        }
+
+        /* 左側圖片格：圓角裁切，圖片可以貼齊格子邊緣 */
+        .photo {
+            width: 50%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px 0 0 24px;
+        }
+
+        /* 連結包住圖片時，讓連結區域填滿整個圖片格 */
+        .photo a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 圖片統一尺寸，裁切不變形；hover 時放大 */
+        .photo img {
+            display: block;
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .photo img {
+            transform: scale(1.06);
+        }
+
+        /* 圖片左上角的標籤，例如「人氣推薦」 */
+        .badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(to right, #ff7043, #ffa726);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            pointer-events: none; /* 讓標籤不擋住下方圖片的點擊 */
+        }
+
+        /* 右側資訊格：店名、評分、說明 */
+        .info {
+            width: 50%;
+            padding: 24px 32px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        /* 店名 */
+        .shop-name {
+            margin: 0 0 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #bf360c;
+        }
+
+        /* 評分列：星星與分數 */
+        .rating {
+            margin-bottom: 12px;
+            font-size: 18px;
+            color: #f9a825;
+        }
+
+        .rating span {
+            margin-left: 6px;
+            font-size: 15px;
+            color: #6d4c41;
+        }
+
+        /* 簡短描述 */
+        .desc {
+            margin: 0 0 16px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6d4c41;
+        }
+
+        /* 標籤列：例如「湯頭濃郁」「平價」 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            font-size: 13px;
+            color: #e65100;
+            background-color: #fff3e0;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>🍜 牛肉麵美食推薦</h1>
+        <p>精選人氣店家，帶你吃遍經典好味道</p>
+    </div>
+
+    <table class="food-table">
+        <tr class="card">
+            <td class="cell photo">
+                <a href="f1.html">
+                    <img src="https://blake.com.tw/wp-content/uploads/2025/09/54771196480_d2743c234c_b.jpg" alt="清真中國牛肉麵食館">
+                </a>
+                <span class="badge">人氣推薦</span>
+            </td>
+            <td class="cell info">
+                <h2 class="shop-name">清真中國牛肉麵食館</h2>
+                <div class="rating">★★★★★ <span>4.8</span></div>
+                <p class="desc">湯頭清爽醇厚，牛肉軟嫩入味，是老饕必訪的經典店家。</p>
+                <div class="tags">
+                    <span class="tag">湯頭濃郁</span>
+                    <span class="tag">牛肉軟嫩</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr class="card">
+            <td class="cell photo">
+                <a href="f2.html">
+                    <img src="https://megapx-assets.dcard.tw/images/0393f732-20fd-4930-9faf-2d8617fb4814/640.webp" alt="牛味牛肉麵">
+                </a>
+                <span class="badge">網友票選</span>
+            </td>
+            <td class="cell info">
+                <h2 class="shop-name">牛味牛肉麵</h2>
+                <div class="rating">★★★★☆ <span>4.5</span></div>
+                <p class="desc">紅燒與清燉雙口味任選，麵條彈牙，份量十足。</p>
+                <div class="tags">
+                    <span class="tag">紅燒</span>
+                    <span class="tag">份量大</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr class="card">
+            <td class="cell photo">
+                <a href="f3.html">
+                    <img src="https://kkmurmur.com/wp-content/uploads/2025/11/DSC_6849-%E6%8B%B7%E8%B2%9D-1-768x512.jpg" alt="半島牛肉麵">
+                </a>
+                <span class="badge">在地好店</span>
+            </td>
+            <td class="cell info">
+                <h2 class="shop-name">半島牛肉麵</h2>
+                <div class="rating">★★★★☆ <span>4.6</span></div>
+                <p class="desc">小店氣氛溫馨，湯頭鮮甜，價格實在，適合家人聚餐。</p>
+                <div class="tags">
+                    <span class="tag">平價</span>
+                    <span class="tag">家庭聚餐</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

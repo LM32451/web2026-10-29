@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牛肉麵菜單 - f2</title>
+    <style>
+        /* 整頁背景：與主頁一致的淡暖色漸層 */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: linear-gradient(160deg, #fff8f0 0%, #ffe6cc 100%);
+            color: #4e342e;
+        }
+
+        /* 返回鍵所在的列：靠左對齊 */
+        .topbar {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+
+        /* 返回按鈕：橘色圓角膠囊形 */
+        .back-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            background: linear-gradient(to right, #ff7043, #ffa726);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(216, 67, 21, 0.25);
+            transition: transform 0.2s ease;
+        }
+
+        /* 滑鼠移上去時微微放大 */
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 排列容器：圖片等寬、等距 */
+        .gallery {
+            display: flex;
+            gap: 14px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 單一卡片：圓角與陰影與主頁統一 */
+        .item {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 24px rgba(216, 67, 21, 0.15);
+        }
+
+        /* 連結填滿卡片 */
+        .item a {
+            display: block;
+            text-decoration: none;
+        }
+
+        /* 圖片統一尺寸：高度固定，裁切不變形 */
+        .item img {
+            display: block;
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* 滑鼠移上去時圖片微微放大 */
+        .item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* 左上角的直排標題 */
+        .title {
+            position: absolute;
+            top: 24px;
+            left: 22px;
+            writing-mode: vertical-rl;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            pointer-events: none;
+        }
+
+        /* 手機寬度時改為上下排列 */
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+            }
+            .item img {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 返回鍵：點擊回到主頁面 -->
+    <div class="topbar">
+        <a class="back-btn" href="index.html">← 返回</a>
+    </div>
+
+    <div class="gallery">
+        <div class="item">
+            <a href="#">
+                <img src="https://threethree.tw/wp-content/uploads/2025/09/20250919-fw1la.jpg" alt="紅燒牛肉麵">
+            </a>
+            <span class="title">紅燒牛肉麵</span>
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <img src="https://threethree.tw/wp-content/uploads/2025/09/20250919-do7bw.jpg" alt="小菜區">
+            </a>
+            <span class="title">小菜區</span>
+        </div>
+    </div>
+
+</body>
+</html>
